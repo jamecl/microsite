@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // THIS LINE IS NEW: It tells the app it lives in the /microsite/ folder
+      base: "/microsite/",
+      
       server: {
         port: 3000,
         host: '0.0.0.0',
