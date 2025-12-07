@@ -44,11 +44,11 @@ const LocationPage: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent"></div>
          </div>
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-            <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded shadow-lg mb-6">
-              <MapPin size={18} className="text-gold-600 shrink-0" />
-              <span className="text-navy-900 font-bold text-xs uppercase tracking-widest">Serving {area.county} County</span>
+            <div className="inline-flex items-center gap-2 bg-white px-5 py-2.5 rounded shadow-lg mb-6">
+              <MapPin size={20} className="text-gold-600 shrink-0" />
+              <span className="text-navy-900 font-bold text-sm uppercase tracking-widest">Serving {area.county} County</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 max-w-4xl leading-tight">
               {area.name} Personal Injury Attorneys
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl">
@@ -58,8 +58,8 @@ const LocationPage: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <Link to="/" className="inline-flex items-center text-gray-500 hover:text-navy-900 mb-8 transition-colors group">
-          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" /> Back to Home
+        <Link to="/" className="inline-flex items-center text-gray-500 hover:text-navy-900 mb-8 transition-colors group text-base font-medium">
+          <ArrowLeft size={18} className="mr-2 group-hover:-translate-x-1 transition-transform" /> Back to Home
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -83,18 +83,18 @@ const LocationPage: React.FC = () => {
                   If you live in zip codes {area.zipCodes.join(', ')} or surrounding areas, we are your local legal advocates. We handle everything from evidence collection to negotiating with hospital billing departments.
                 </p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-2 text-navy-900 font-bold">
-                  <CheckCircle size={20} className="text-green-500" /> Free Consultations
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
+                <div className="flex items-center gap-2 text-navy-900 font-bold text-base">
+                  <CheckCircle size={22} className="text-green-500" /> Free Consultations
                 </div>
-                <div className="flex items-center gap-2 text-navy-900 font-bold">
-                  <CheckCircle size={20} className="text-green-500" /> Home & Hospital Visits
+                <div className="flex items-center gap-2 text-navy-900 font-bold text-base">
+                  <CheckCircle size={22} className="text-green-500" /> Home & Hospital Visits
                 </div>
-                <div className="flex items-center gap-2 text-navy-900 font-bold">
-                  <CheckCircle size={20} className="text-green-500" /> No Recovery, No Fee
+                <div className="flex items-center gap-2 text-navy-900 font-bold text-base">
+                  <CheckCircle size={22} className="text-green-500" /> No Recovery, No Fee
                 </div>
-                <div className="flex items-center gap-2 text-navy-900 font-bold">
-                  <CheckCircle size={20} className="text-green-500" /> Local Court Knowledge
+                <div className="flex items-center gap-2 text-navy-900 font-bold text-base">
+                  <CheckCircle size={22} className="text-green-500" /> Local Court Knowledge
                 </div>
               </div>
             </div>
@@ -105,17 +105,17 @@ const LocationPage: React.FC = () => {
                 <AlertTriangle className="text-gold-500 mr-2" />
                 High-Risk Accident Areas in {area.name}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 text-base">
                 Our investigators frequently handle cases involving accidents at these dangerous {area.name} locations. We know exactly what evidence to look for at these specific sites:
               </p>
               <div className="grid grid-cols-1 gap-4">
                 {area.accidentHotspots.map((spot, idx) => (
-                  <div key={idx} className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-navy-800">
+                  <div key={idx} className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-navy-800">
                     <div className="flex items-start">
-                      <MapPin className="text-red-500 mr-3 mt-1 shrink-0" size={20} />
+                      <MapPin className="text-red-500 mr-3 mt-1 shrink-0" size={24} />
                       <div>
-                        <h4 className="font-bold text-navy-900 text-lg mb-1">{spot.name}</h4>
-                        <p className="text-gray-600 text-sm">{spot.description}</p>
+                        <h4 className="font-bold text-navy-900 text-lg mb-2">{spot.name}</h4>
+                        <p className="text-gray-600 text-base">{spot.description}</p>
                       </div>
                     </div>
                   </div>
@@ -129,16 +129,16 @@ const LocationPage: React.FC = () => {
                 <FileText className="text-navy-700 mr-2" />
                 Obtaining Your {area.name} Accident Report
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 text-base">
                 To file a claim, you need an official accident report. In {area.name}, these are typically handled by the following agencies. We can request these on your behalf.
               </p>
               <div className="grid grid-cols-1 gap-6">
                 {area.localPolice.map((dept, idx) => (
-                  <div key={idx} className="bg-white p-4 rounded-lg shadow-sm">
+                  <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
                     <h4 className="font-bold text-navy-900 text-lg">{dept.name}</h4>
-                    <p className="text-gray-500 text-sm mb-2">{dept.address}</p>
-                    <a href={`tel:${dept.phone}`} className="text-gold-600 font-bold text-sm hover:underline">{dept.phone}</a>
-                    <p className="text-gray-600 text-sm mt-2 italic">"{dept.description}"</p>
+                    <p className="text-gray-500 text-base mb-2">{dept.address}</p>
+                    <a href={`tel:${dept.phone}`} className="text-gold-600 font-bold text-base hover:underline block mb-2">{dept.phone}</a>
+                    <p className="text-gray-600 text-base italic">"{dept.description}"</p>
                   </div>
                 ))}
               </div>
@@ -150,14 +150,14 @@ const LocationPage: React.FC = () => {
                 <h3 className="text-2xl font-bold text-navy-900 mb-6 flex items-center">
                   <Building2 className="text-blue-500 mr-3" size={28} /> Local Medical Care
                 </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
+                <p className="text-gray-600 mb-6 flex-grow text-base">
                   Seeking immediate medical attention is critical. We work with:
                 </p>
                 <div className="space-y-4">
                   {area.medicalFacilities.map((hospital, i) => (
                     <div key={i} className="bg-slate-50 p-5 rounded-lg border-l-4 border-blue-500 shadow-sm">
                       <div className="font-bold text-navy-900 text-lg mb-1">{hospital.name}</div>
-                      <div className="text-gray-600 text-sm leading-relaxed">{hospital.description}</div>
+                      <div className="text-gray-600 text-base leading-relaxed">{hospital.description}</div>
                     </div>
                   ))}
                 </div>
@@ -167,12 +167,12 @@ const LocationPage: React.FC = () => {
                 <h3 className="text-2xl font-bold text-navy-900 mb-6 flex items-center">
                   <Gavel className="text-navy-800 mr-3" size={28} /> Legal Proceedings
                 </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
+                <p className="text-gray-600 mb-6 flex-grow text-base">
                   Cases in {area.name} are typically heard at:
                 </p>
                 <div className="bg-slate-50 p-5 rounded-lg border-l-4 border-navy-800 shadow-sm">
                   <div className="font-bold text-navy-900 text-lg mb-1">{area.courtInfo.name}</div>
-                  <div className="text-gray-600 text-sm leading-relaxed">{area.courtInfo.description}</div>
+                  <div className="text-gray-600 text-base leading-relaxed">{area.courtInfo.description}</div>
                 </div>
               </div>
             </div>
@@ -183,7 +183,7 @@ const LocationPage: React.FC = () => {
                 <Map className="text-gold-600 mr-2" />
                 Visiting Our Office from {area.name}
               </h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-gray-700 leading-relaxed mb-6 text-base">
                 {area.directionsFrom}
               </p>
               <div className="flex gap-4">
@@ -191,9 +191,9 @@ const LocationPage: React.FC = () => {
                    href={`https://www.google.com/maps/dir/${area.name},+GA/555+Cherry+St,+Macon,+GA+31201`}
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="text-sm font-bold text-navy-900 hover:text-gold-600 flex items-center"
+                   className="text-base font-bold text-navy-900 hover:text-gold-600 flex items-center"
                  >
-                   Get Turn-by-Turn Directions <ArrowRight size={14} className="ml-1" />
+                   Get Turn-by-Turn Directions <ArrowRight size={18} className="ml-1" />
                  </a>
               </div>
             </div>
@@ -207,13 +207,13 @@ const LocationPage: React.FC = () => {
               <div className="space-y-4">
                 {area.localFAQs.map((faq, idx) => (
                   <details key={idx} className="bg-white rounded-lg shadow-sm border border-gray-100 group">
-                    <summary className="list-none flex justify-between items-center p-5 cursor-pointer">
-                      <span className="font-bold text-navy-900">{faq.question}</span>
+                    <summary className="list-none flex justify-between items-center p-6 cursor-pointer">
+                      <span className="font-bold text-navy-900 text-lg">{faq.question}</span>
                       <span className="transition group-open:rotate-180">
-                        <ChevronDown className="text-gold-500" size={20} />
+                        <ChevronDown className="text-gold-500" size={24} />
                       </span>
                     </summary>
-                    <div className="px-5 pb-5 text-gray-600 leading-relaxed text-sm border-t border-gray-50 pt-3">
+                    <div className="px-6 pb-6 text-gray-700 leading-relaxed text-base border-t border-gray-50 pt-4">
                       {faq.answer}
                     </div>
                   </details>
@@ -230,11 +230,11 @@ const LocationPage: React.FC = () => {
                   <p className="mb-6 text-gray-300 text-lg">
                     We can meet you at your home, at the hospital, or at our Macon office. Don't sign anything until you speak with us.
                   </p>
-                  <div className="flex items-center gap-2 text-gold-500 font-bold mb-2">
-                    <CheckCircle size={20} /> Fastest Response Time
+                  <div className="flex items-center gap-3 text-gold-500 font-bold mb-3 text-base">
+                    <CheckCircle size={22} /> Fastest Response Time
                   </div>
-                   <div className="flex items-center gap-2 text-gold-500 font-bold">
-                    <CheckCircle size={20} /> Free Case Review
+                   <div className="flex items-center gap-3 text-gold-500 font-bold text-base">
+                    <CheckCircle size={22} /> Free Case Review
                   </div>
                 </div>
                 <div className="bg-navy-800 p-6 rounded-xl border border-navy-700 shadow-xl">
@@ -249,27 +249,27 @@ const LocationPage: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="bg-white p-6 rounded-xl shadow-lg sticky top-24 border border-gray-100">
               <div className="text-center mb-6">
-                 <div className="inline-flex items-center justify-center w-12 h-12 bg-gold-100 text-gold-600 rounded-full mb-3">
-                   <Phone size={24} />
+                 <div className="inline-flex items-center justify-center w-14 h-14 bg-gold-100 text-gold-600 rounded-full mb-3">
+                   <Phone size={28} />
                  </div>
                  <h3 className="text-xl font-bold text-navy-900">24/7 Legal Help</h3>
-                 <p className="text-gray-500 text-sm">We answer calls day and night.</p>
+                 <p className="text-gray-500 text-base">We answer calls day and night.</p>
               </div>
               
               <a 
                 href="#location-contact"
                 onClick={scrollToContact}
-                className="flex items-center justify-center w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 rounded-lg mb-6 transition-colors shadow-md hover:shadow-lg cursor-pointer"
+                className="flex items-center justify-center w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 rounded-lg mb-6 transition-colors shadow-md hover:shadow-lg cursor-pointer text-lg"
               >
                 Get Free Case Review
               </a>
               
-              <div className="space-y-6">
+              <div className="space-y-8">
                  <div>
-                    <h4 className="font-bold text-navy-900 mb-2 text-sm uppercase tracking-wider">Practice Areas</h4>
+                    <h4 className="font-bold text-navy-900 mb-3 text-sm uppercase tracking-wider">Practice Areas</h4>
                     <div className="flex flex-wrap gap-2">
                       {['Car Accidents', 'Truck Accidents', 'Motorcycle', 'Wrongful Death', 'Slip & Fall'].map(tag => (
-                        <span key={tag} className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">
+                        <span key={tag} className="text-sm bg-slate-100 text-slate-700 px-3 py-1.5 rounded font-medium">
                           {tag}
                         </span>
                       ))}
@@ -277,16 +277,16 @@ const LocationPage: React.FC = () => {
                  </div>
 
                 <div>
-                  <h4 className="font-bold text-navy-900 mb-2 text-sm uppercase tracking-wider">Nearby Areas</h4>
-                  <ul className="space-y-2">
+                  <h4 className="font-bold text-navy-900 mb-3 text-sm uppercase tracking-wider">Nearby Areas</h4>
+                  <ul className="space-y-3">
                     {SERVICE_AREAS.filter(a => a.id !== id).map(other => (
                       <li key={other.id}>
                         <Link 
                           to={`/area/${other.id}`}
-                          className="flex justify-between items-center text-gray-600 hover:text-gold-600 text-sm group"
+                          className="flex justify-between items-center text-gray-600 hover:text-gold-600 text-base group"
                         >
                           <span>{other.name}</span>
-                          <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                         </Link>
                       </li>
                     ))}

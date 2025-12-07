@@ -80,12 +80,12 @@ const ContactForm: React.FC<{ light?: boolean }> = ({ light = false }) => {
           <CheckCircle size={32} />
         </div>
         <h3 className={`text-2xl font-bold mb-2 ${light ? 'text-navy-900' : 'text-white'}`}>Message Received</h3>
-        <p className={`mb-6 ${light ? 'text-gray-600' : 'text-gray-300'}`}>
+        <p className={`mb-6 text-base ${light ? 'text-gray-600' : 'text-gray-300'}`}>
           Thank you for contacting Macon Personal Injury Attorneys. An attorney will review your information and contact you shortly (usually within 1 hour).
         </p>
         <button 
           onClick={() => setStatus('idle')}
-          className="text-gold-500 font-bold hover:underline"
+          className="text-gold-500 font-bold hover:underline text-lg"
         >
           Send another message
         </button>
@@ -93,11 +93,13 @@ const ContactForm: React.FC<{ light?: boolean }> = ({ light = false }) => {
     );
   }
 
-  const labelClass = `block text-xs uppercase tracking-wider font-bold mb-1 ${light ? 'text-navy-900' : 'text-gray-400'}`;
+  // Increased font size from text-xs to text-sm for labels
+  const labelClass = `block text-sm uppercase tracking-wider font-bold mb-2 ${light ? 'text-navy-900' : 'text-gray-400'}`;
   
   const getInputClass = (fieldName: keyof typeof errors) => {
     const hasError = !!errors[fieldName];
-    let className = "w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors ";
+    // Explicitly set text-base to prevent iOS zoom (requires 16px)
+    let className = "w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors text-base ";
     
     if (hasError) {
       if (light) {
@@ -118,16 +120,16 @@ const ContactForm: React.FC<{ light?: boolean }> = ({ light = false }) => {
   const ErrorMessage = ({ message }: { message?: string }) => {
     if (!message) return null;
     return (
-      <div className="flex items-center gap-1 mt-1.5 text-red-500 text-xs font-bold animate-pulse">
-        <AlertCircle size={12} />
+      <div className="flex items-center gap-1 mt-1.5 text-red-500 text-sm font-bold animate-pulse">
+        <AlertCircle size={14} />
         <span>{message}</span>
       </div>
     );
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`space-y-4 ${light ? '' : 'text-left'}`} noValidate>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className={`space-y-5 ${light ? '' : 'text-left'}`} noValidate>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className={labelClass}>Full Name</label>
           <input
@@ -187,7 +189,7 @@ const ContactForm: React.FC<{ light?: boolean }> = ({ light = false }) => {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full bg-gold-600 hover:bg-gold-500 text-white font-bold py-4 rounded-lg shadow-lg transform transition hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full bg-gold-600 hover:bg-gold-500 text-white font-bold py-4 rounded-lg shadow-lg transform transition hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg"
       >
         {status === 'submitting' ? (
           <>
@@ -195,11 +197,12 @@ const ContactForm: React.FC<{ light?: boolean }> = ({ light = false }) => {
           </>
         ) : (
           <>
-            <Send size={20} /> Get Free Case Evaluation
+            <Send size={24} /> Get Free Case Evaluation
           </>
         )}
       </button>
-      <p className={`text-[10px] text-center mt-4 ${light ? 'text-gray-400' : 'text-gray-500'}`}>
+      {/* Increased disclaimer text size */}
+      <p className={`text-xs text-center mt-4 ${light ? 'text-gray-500' : 'text-gray-400'}`}>
         By submitting this form, you agree to be contacted by our firm. Your information is confidential.
       </p>
     </form>

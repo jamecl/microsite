@@ -54,18 +54,18 @@ const Home: React.FC = () => {
               Our Practice Areas
             </a>
           </div>
-          <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 text-gray-400 text-sm font-medium">
+          <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 text-gray-400 text-base font-medium">
             <div className="flex items-center gap-2">
-              <CheckCircle className="text-green-500" size={18} /> No Win, No Fee
+              <CheckCircle className="text-green-500" size={20} /> No Win, No Fee
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="text-green-500" size={18} /> Available 24/7
+              <CheckCircle className="text-green-500" size={20} /> Available 24/7
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="text-green-500" size={18} /> Free Consultations
+              <CheckCircle className="text-green-500" size={20} /> Free Consultations
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="text-green-500" size={18} /> Local to Macon
+              <CheckCircle className="text-green-500" size={20} /> Local to Macon
             </div>
           </div>
         </div>
@@ -102,14 +102,14 @@ const Home: React.FC = () => {
             <div>
               <h2 className="text-3xl font-serif font-bold mb-4">Our Recent Case Results</h2>
               <div className="w-24 h-1 bg-gold-500 mb-4"></div>
-              <p className="text-gray-300 max-w-xl">We let our track record speak for itself. While past results don't guarantee future outcomes, they show our commitment to maximizing value for our clients.</p>
+              <p className="text-gray-300 max-w-xl text-lg">We let our track record speak for itself. While past results don't guarantee future outcomes, they show our commitment to maximizing value for our clients.</p>
             </div>
             <a 
               href="#contact" 
               onClick={scrollToSection('contact')}
-              className="hidden md:flex items-center text-gold-500 font-bold hover:text-white transition-colors mt-4 md:mt-0 cursor-pointer"
+              className="hidden md:flex items-center text-gold-500 font-bold hover:text-white transition-colors mt-4 md:mt-0 cursor-pointer text-lg"
             >
-              Review Your Case <ArrowRight size={20} className="ml-2" />
+              Review Your Case <ArrowRight size={22} className="ml-2" />
             </a>
           </div>
 
@@ -124,7 +124,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center text-gray-400 text-xs mb-3">
                   <MapPin size={12} className="mr-1" /> {result.location}
                 </div>
-                <p className="text-gray-300 text-sm leading-relaxed">{result.description}</p>
+                <p className="text-gray-300 text-base leading-relaxed">{result.description}</p>
               </div>
             ))}
           </div>
@@ -160,14 +160,14 @@ const Home: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 border-l-4 border-gold-500 p-6 my-6 italic text-navy-800">
+                <div className="bg-slate-50 border-l-4 border-gold-500 p-6 my-6 italic text-navy-800 text-lg">
                   "We don't just take cases to settle them. We take cases to win them. If the insurance company won't pay what is fair, we are ready to let a jury decide."
                 </div>
               </div>
 
               <div className="mt-8 flex gap-4">
-                <Link to="/attorneys" className="bg-navy-900 text-white px-8 py-4 rounded-md font-bold hover:bg-navy-800 transition-colors inline-flex items-center shadow-lg">
-                  Meet Your Attorneys <ArrowRight size={20} className="ml-2" />
+                <Link to="/attorneys" className="bg-navy-900 text-white px-8 py-4 rounded-md font-bold hover:bg-navy-800 transition-colors inline-flex items-center shadow-lg text-lg">
+                  Meet Your Attorneys <ArrowRight size={22} className="ml-2" />
                 </Link>
               </div>
             </div>
@@ -185,20 +185,20 @@ const Home: React.FC = () => {
                      <Users className="text-gold-600" size={24} />
                      <p className="text-navy-900 font-bold text-lg">Client-First Philosophy</p>
                    </div>
-                  <p className="text-gray-600 text-sm">Every client gets our personal cell phone numbers. You are never left in the dark about your case status.</p>
+                  <p className="text-gray-600 text-base">Every client gets our personal cell phone numbers. You are never left in the dark about your case status.</p>
                 </div>
               </div>
 
               <div className="bg-navy-50 p-8 rounded-xl border border-navy-100">
-                <h3 className="font-bold text-navy-900 text-lg mb-4 flex items-center">
-                  <Building className="mr-2 text-gold-600" /> Community Involvement
+                <h3 className="font-bold text-navy-900 text-xl mb-4 flex items-center">
+                  <Building className="mr-2 text-gold-600" size={24} /> Community Involvement
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-base text-gray-600 mb-6">
                   We are proud sponsors of the Macon Cherry Blossom Festival and support local high school athletics throughout Bibb and Houston counties. We are dedicated to making our roads safer not just through litigation, but through community education and advocacy.
                 </p>
                 <div className="flex gap-2">
-                  <span className="bg-white px-3 py-1 rounded-full text-xs font-bold text-navy-700 shadow-sm">Cherry Blossom Sponsor</span>
-                  <span className="bg-white px-3 py-1 rounded-full text-xs font-bold text-navy-700 shadow-sm">Macon Bar Association</span>
+                  <span className="bg-white px-4 py-2 rounded-full text-sm font-bold text-navy-700 shadow-sm border border-navy-100">Cherry Blossom Sponsor</span>
+                  <span className="bg-white px-4 py-2 rounded-full text-sm font-bold text-navy-700 shadow-sm border border-navy-100">Macon Bar Association</span>
                 </div>
               </div>
             </div>
@@ -227,31 +227,32 @@ const Home: React.FC = () => {
                         <Shield size={28} />
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-navy-900 group-hover:text-gold-600 transition-colors">{area.title}</h3>
+                    <Link to={`/practice/${area.id}`}>
+                      <h3 className="text-2xl font-bold text-navy-900 group-hover:text-gold-600 transition-colors cursor-pointer">{area.title}</h3>
+                    </Link>
                   </div>
                   
-                  <p className="text-gray-700 mb-6 leading-relaxed">
+                  <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                     {area.fullDescription}
                   </p>
 
                   <div className="bg-slate-50 rounded-lg p-5 border-l-4 border-gold-400">
                     <div className="flex items-center gap-2 mb-2 text-navy-900 font-bold text-sm uppercase tracking-wide">
-                      <BookOpen size={16} className="text-gold-600" /> Recent Case Example
+                      <BookOpen size={18} className="text-gold-600" /> Recent Case Example
                     </div>
-                    <p className="text-sm text-gray-600 italic">
+                    <p className="text-base text-gray-600 italic">
                       "{area.exampleCase}"
                     </p>
                   </div>
                 </div>
-                <div className="bg-navy-50 px-8 py-4 border-t border-gray-100 flex justify-between items-center">
+                <div className="bg-navy-50 px-8 py-5 border-t border-gray-100 flex justify-between items-center">
                   <span className="text-sm font-bold text-gray-500 uppercase tracking-wide">Free Consultation</span>
-                  <a 
-                    href="#contact" 
-                    onClick={scrollToSection('contact')}
-                    className="text-gold-600 text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform cursor-pointer"
+                  <Link 
+                    to={`/practice/${area.id}`}
+                    className="text-gold-600 text-base font-bold flex items-center group-hover:translate-x-1 transition-transform cursor-pointer"
                   >
-                    Learn More <ArrowRight size={16} className="ml-2" />
-                  </a>
+                    Learn More <ArrowRight size={18} className="ml-2" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -265,24 +266,24 @@ const Home: React.FC = () => {
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl font-serif font-bold text-navy-900 mb-2">Serving All of Middle Georgia</h2>
-              <p className="text-gray-600">We travel to you if you cannot come to us.</p>
+              <p className="text-gray-600 text-lg">We travel to you if you cannot come to us.</p>
             </div>
-            <Link to="/area/warner-robins" className="hidden md:flex items-center text-gold-600 font-bold hover:text-gold-800">
-              View All Locations <ArrowRight size={20} className="ml-2" />
+            <Link to="/area/warner-robins" className="hidden md:flex items-center text-gold-600 font-bold hover:text-gold-800 text-lg">
+              View All Locations <ArrowRight size={22} className="ml-2" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICE_AREAS.slice(0, 3).map(area => (
-              <Link key={area.id} to={`/area/${area.id}`} className="group block relative h-72 rounded-xl overflow-hidden shadow-md">
+              <Link key={area.id} to={`/area/${area.id}`} className="group block relative h-80 rounded-xl overflow-hidden shadow-md">
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 z-10" />
                 <img src={area.image} alt={area.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute bottom-0 left-0 p-6 z-20 w-full">
+                <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
                   <h3 className="text-2xl font-bold text-white mb-2 flex items-center justify-between">
                     {area.name}
                     <span className="text-xs bg-gold-600 px-2 py-1 rounded text-white font-normal">{area.distance}</span>
                   </h3>
-                  <p className="text-gray-200 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-200 text-base mb-4 line-clamp-2 leading-relaxed">
                     {area.shortDescription}
                   </p>
                   <span className="inline-flex items-center text-gold-400 text-sm font-bold group-hover:text-white transition-colors">
@@ -306,11 +307,11 @@ const Home: React.FC = () => {
             {TESTIMONIALS.map((t) => (
               <div key={t.id} className="bg-navy-800 p-8 rounded-xl relative">
                 <div className="text-gold-500 mb-4 flex">
-                  {[...Array(t.rating)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
+                  {[...Array(t.rating)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
                 </div>
-                <p className="text-gray-300 italic mb-6 leading-relaxed">"{t.text}"</p>
+                <p className="text-gray-300 italic mb-6 leading-relaxed text-base">"{t.text}"</p>
                 <div>
-                  <p className="font-bold text-white">{t.author}</p>
+                  <p className="font-bold text-white text-lg">{t.author}</p>
                   <p className="text-sm text-gold-500">{t.location}</p>
                 </div>
               </div>
@@ -329,10 +330,10 @@ const Home: React.FC = () => {
                 <summary className="list-none flex justify-between items-center p-6 cursor-pointer">
                   <span className="font-bold text-navy-900 text-lg">{faq.question}</span>
                   <span className="transition group-open:rotate-180">
-                    <ChevronDown className="text-gold-500" />
+                    <ChevronDown className="text-gold-500" size={24} />
                   </span>
                 </summary>
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4 text-base">
                   {faq.answer}
                 </div>
               </details>
@@ -360,9 +361,9 @@ const Home: React.FC = () => {
                  <div className="bg-white/95 backdrop-blur p-8 rounded-xl text-center shadow-2xl border-l-4 border-gold-600 max-w-sm mx-4">
                    <MapPin className="mx-auto text-gold-600 mb-4" size={32} />
                    <p className="font-bold text-navy-900 text-xl mb-1">Macon Personal Injury Attorneys</p>
-                   <p className="text-gray-600">555 Cherry Street, Suite 200</p>
-                   <p className="text-gray-600 mb-4">Macon, GA 31201</p>
-                   <p className="font-bold text-gold-600 text-lg">(478) 555-0123</p>
+                   <p className="text-gray-600 text-base">555 Cherry Street, Suite 200</p>
+                   <p className="text-gray-600 mb-4 text-base">Macon, GA 31201</p>
+                   <p className="font-bold text-gold-600 text-xl">(478) 555-0123</p>
                  </div>
                </div>
              </div>

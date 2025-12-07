@@ -75,11 +75,11 @@ const ChatAssistant: React.FC = () => {
         <div className="bg-navy-900 text-white p-4 sm:rounded-t-2xl flex justify-between items-center shrink-0">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <h3 className="font-serif font-bold">Ask an Attorney Assistant</h3>
+            <h3 className="font-serif font-bold text-lg">Ask an Attorney Assistant</h3>
           </div>
           <button onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white">
-            <Minus size={20} className="sm:hidden" /> {/* Minimize on mobile */}
-            <X size={20} className="hidden sm:block" />
+            <Minus size={24} className="sm:hidden" /> {/* Minimize on mobile */}
+            <X size={24} className="hidden sm:block" />
           </button>
         </div>
 
@@ -87,10 +87,11 @@ const ChatAssistant: React.FC = () => {
         <div className="flex-1 overflow-y-auto p-4 bg-slate-50 space-y-4">
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[80%] rounded-2xl p-3 text-sm ${
+              {/* Increased font size to text-base for better readability */}
+              <div className={`max-w-[85%] rounded-2xl p-3.5 text-base shadow-sm ${
                 msg.role === 'user' 
                   ? 'bg-navy-800 text-white rounded-br-none' 
-                  : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'
+                  : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none'
               }`}>
                 {msg.text}
               </div>
@@ -119,22 +120,23 @@ const ChatAssistant: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyPress}
               placeholder="Ask about Macon injury law..."
-              className="flex-1 bg-navy-800 text-white placeholder-gray-400 border border-navy-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent text-sm"
+              // Using text-base to prevent zoom
+              className="flex-1 bg-navy-800 text-white placeholder-gray-400 border border-navy-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent text-base"
             />
             <button
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              className="bg-gold-600 hover:bg-gold-500 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors"
+              className="bg-gold-600 hover:bg-gold-500 disabled:bg-gray-300 text-white p-3 rounded-lg transition-colors"
             >
-              <Send size={20} />
+              <Send size={24} />
             </button>
           </div>
           
-          {/* Prominent Legal Disclaimer */}
-          <div className="mt-3 bg-gray-50 border border-gray-200 rounded-md p-2.5 flex gap-2">
-            <AlertTriangle size={16} className="text-gold-600 shrink-0 mt-0.5" />
-            <p className="text-[10px] leading-tight text-gray-500">
-              <span className="font-bold text-gray-700 block mb-0.5">IMPORTANT DISCLAIMER</span>
+          {/* Prominent Legal Disclaimer - increased font size */}
+          <div className="mt-3 bg-gray-50 border border-gray-200 rounded-md p-3 flex gap-3">
+            <AlertTriangle size={18} className="text-gold-600 shrink-0 mt-0.5" />
+            <p className="text-xs leading-relaxed text-gray-600">
+              <span className="font-bold text-gray-800 block mb-0.5">IMPORTANT DISCLAIMER</span>
               This AI assistant is <strong>not an attorney</strong> and cannot provide legal advice. 
               Conversations are <strong>not privileged</strong> or confidential. Please consult a 
               human attorney for specific legal needs.

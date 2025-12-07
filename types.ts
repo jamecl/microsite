@@ -16,12 +16,26 @@ export interface ServiceArea {
   localFAQs: FAQ[];
 }
 
+export interface PracticeAreaContent {
+  intro: string;
+  whyChooseUs: string;
+  keyIssues: { title: string; text: string }[];
+  statuteInfo: { title: string; code: string; description: string };
+  faqs: FAQ[];
+  // New Long-Form Content Fields
+  commonInjuries: { title: string; description: string }[];
+  compensationTypes: { title: string; description: string }[];
+  localRelevance: string; // Specific paragraph about Macon/Bibb context
+}
+
 export interface PracticeArea {
+  id: string;
   title: string;
   description: string;
   icon: string;
   fullDescription: string;
   exampleCase: string;
+  content: PracticeAreaContent;
 }
 
 export interface ChatMessage {
@@ -41,6 +55,7 @@ export interface Testimonial {
 export interface FAQ {
   question: string;
   answer: string;
+  expandedAnswer?: string; // Optional longer answer for detailed pages
 }
 
 export interface CaseResult {
